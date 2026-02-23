@@ -1,0 +1,193 @@
+/***
+    The new CSS reset - version 1.7.3 (last updated 7.8.2022)
+    GitHub page: https://github.com/elad2412/the-new-css-reset
+***/
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+	all: unset;
+	display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a,
+button {
+	cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol,
+ul,
+menu {
+	list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+	max-width: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+	border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input,
+textarea {
+	-webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+	white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+	-webkit-appearance: revert;
+	appearance: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+	color: unset;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+	display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element*/
+:where([contenteditable]:not([contenteditable="false"])) {
+	-moz-user-modify: read-write;
+	-webkit-user-modify: read-write;
+	overflow-wrap: break-word;
+	-webkit-line-break: after-white-space;
+	-webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+	-webkit-user-drag: element;
+}
+
+/* my own advanced settings */
+*,
+*::before,
+*::after {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+a {
+	text-decoration: none;
+}
+img {
+	vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: inherit;
+	font-size: inherit;
+}
+
+@font-face {
+	font-family: "Lato";
+	src: url("../src/assets/fonts/latoregular.ttf");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Source Code Pro";
+	src: url("../src/assets/fonts/SourceCodePro-Regular.ttf");
+	font-weight: 400;
+}
+
+@font-face {
+	font-family: "Source Code Pro";
+	src: url("../src/assets/fonts/SourceCodePro-Medium.ttf");
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: "Source Code Pro";
+	src: url("../src/assets/fonts/SourceCodePro-SemiBold.ttf");
+	font-weight: 600;
+}
+
+@font-face {
+	font-family: "Source Code Pro";
+	src: url("../src/assets/fonts/SourceCodePro-Bold.ttf");
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("../src/assets/fonts/Inter-ExtraLight.ttf");
+	font-weight: 200;
+}
+
+@font-face {
+	font-family: "Inter";
+	src: url("../src/assets/fonts/Inter-Regular.ttf");
+	font-weight: 400;
+}
+
+:root {
+	--color-white: #ffffff;
+	--color-title: #e6f5ff;
+	--color-text: #dbdcdd;
+	--color-label: #7e929f;
+	--color-light-green: #00ffa3;
+	--color-dark-green: #014a30;
+	--color-light-blue: #21a2ff;
+	--color-container: #163346;
+	--color-primary-container: #001E32;
+	--color-validation: #FF5353;
+	--color-date: rgba(235, 235, 235, 0.70);
+	--color-blog: #ebebeb;
+	--font-source-code: "Source Code Pro";
+	--font-inter: "Inter";
+	--font-lato: "Lato";
+}
+
+html,
+body {
+	height: 100%;
+	font-family: "Lato";
+}
+
+#root {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+
+#main {
+	flex: 1 1 auto;
+	display: flex;
+	flex-direction: column;
+}
+
+.hidden {
+	overflow: hidden;
+}

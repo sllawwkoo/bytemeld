@@ -1,0 +1,29 @@
+import style from "./blogItem.module.scss";
+import { ArrowGreen } from "../../Icons";
+// import { formatDate } from "../../../utils/helpers";
+import { Link } from "react-router-dom";
+
+export function BlogItem({ ...article }) {
+	return (
+		<Link
+			to={`/blog/${article.slug}`}
+			className={style.wrapper}
+		>
+			<div className={style.image}>
+				<img
+					src={article.mainUrl}
+					alt={article.title}
+				/>
+			</div>
+			<div className={style.content_box}>
+				<h3 className={style.title}>{article.title}</h3>
+				<div className={style.actions}>
+					<span className={style.date}>{article.date}</span>
+					<span>
+						<ArrowGreen />
+					</span>
+				</div>
+			</div>
+		</Link>
+	);
+}

@@ -1,0 +1,39 @@
+.wrapperIntro {
+	background:
+		linear-gradient(179deg, rgba(33, 162, 255, 0) 9.54%, rgba(33, 162, 255, 0.15) 99.55%),
+		linear-gradient(0deg, rgba(0, 20, 33, 0.99) 0%, rgba(0, 20, 33, 0.99) 100%),
+		url("../../../assets/images/bg/bg_noise.jpg"),
+		lightgray 50% / cover no-repeat;
+	display: flex;
+	justify-content: center;
+}
+
+.container {
+	max-width: 1440px;
+	padding: 90px 40px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 80px;
+	width: 100%;
+	opacity: 0;
+	animation: animation-appearance 0.7s linear 0.4s forwards;
+
+	@media (max-width: 560px) {
+		padding: 90px 10px;
+	}
+
+	@media (max-width: 480px) {
+		padding: 20px 10px 90px;
+	}
+}
+
+@keyframes animation-appearance {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

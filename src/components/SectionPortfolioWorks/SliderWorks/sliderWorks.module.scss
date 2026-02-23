@@ -1,0 +1,42 @@
+.btn_container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	padding-top: 40px;
+	max-width: fit-content;
+	margin: 0 auto;
+}
+
+.prevBtn,
+.nextBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 48px;
+	height: 48px;
+	opacity: 0.5;
+	background-color: var(--color-primary-container);
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+
+	&:hover {
+		opacity: 1;
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+.prevBtn {
+	transform: rotate(180deg);
+}
+
+.pagination {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	background-color: transparent;
+}
+
+.swiper-pagination-bullet {
+	border-radius: 0;
+}
