@@ -1,4 +1,4 @@
-# ByteMeld — Portfolio UI Showcase
+# ByteMeld — UI Showcase
 
 ---
 
